@@ -43,6 +43,10 @@ Anybody that wants to have a clear route to follow while looking for items in th
 ![image](https://user-images.githubusercontent.com/79177865/145802468-da73ea51-d72d-4355-a0ce-d77534135725.png)
 ![image](https://user-images.githubusercontent.com/79177865/145802481-1ed9b591-bc27-40a4-b104-8dbe9fb282d3.png)
 ![image](https://user-images.githubusercontent.com/79177865/145802490-56db20ca-2faf-476a-a01a-5b5b8cfd9607.png)
+![image](https://user-images.githubusercontent.com/79177865/145990264-cfe70bc7-dc2e-49cc-acd2-4fe247877215.png)
+![image](https://user-images.githubusercontent.com/79177865/145990276-c1e59bd6-d385-4e17-8ddb-5fcf282d0a92.png)
+![image](https://user-images.githubusercontent.com/79177865/145990311-932cc331-b892-4fa5-b353-e6d05d292335.png)
+
 
 ### Style guide
 
