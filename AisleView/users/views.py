@@ -12,9 +12,9 @@ from users import serializers
 class CustomUserList(APIView):
     # GET method - retrieve all users
     def get(self, request):
-        if self.request.user.is_superuser:
+        if self.request.user.is_superuser: #if user requesting is superuser, show all users
             customuser = CustomUser.objects.all()
-        else:
+        else: #if user requesting is not superuser, only show self
             customuser = CustomUser.objects.filter(username=self.request.user)
 
         serializer = CustomUserSerializer(customuser, many=True) #explicitly stating the relationship
