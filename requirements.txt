@@ -1,2 +1,5 @@
-Django==4.0
+Django==3.2.10
 djangorestframework==3.12.4
+django-rest-auth==0.9.5
+django-allauth==0.45.00
+django-cors-headers==3.10.1

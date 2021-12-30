@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,16 +21,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-dotenv_file = os.path.join(BASE_DIR, ".env")
-if os.path.isfile(dotenv_file):
-    dotenv.load_dotenv(dotenv_file)
-SECRET_KEY = os.environ('SECRET_KEY')
+
+SECRET_KEY = '$%ys8j-2mq4-k=01d)13cgxcxxo+t8fks5zf!b_li_+b2x%wm6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG') != 'False'
 
 ALLOWED_HOSTS = []
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000']
 
 
 # Application definition
@@ -43,9 +43,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 3rd party apps
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'rest_auth.registration',
+    'corsheaders',
+
+    # local apps
+    'users'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -56,6 +71,26 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'AisleView.urls'
+
+AUTHENTICATION_BACKEND = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
+SITE_ID = 1
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_USERNAME = False
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_UNIQUE_USERNAME = True
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+
+
+REST_FRAMEWORK = {
+    'DATETIME_FORMAT' : "%d/%m/%Y",
+    'DEFAULT_AUTHENTICATION_CLASSES' : [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
 
 TEMPLATES = [
     {
@@ -129,3 +164,6 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+AUTH_USER_MODEL = 'users.CustomUser'
