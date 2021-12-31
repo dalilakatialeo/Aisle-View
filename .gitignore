@@ -1,3 +1,5 @@
 # created by virtualenv automatically
 venv/*
 .env
+
+secret_settings.py

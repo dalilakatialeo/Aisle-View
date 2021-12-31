@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import os
+
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,13 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.environ.get(
-    'DJANGO_SECRET_KEY',
-    'DJANGO-INSECURE-$%ys8j-2mq4-k=01d)13cgxcxxo+t8fks5zf!b_li_+b2x%wm6')
+from secret_settings import *
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = os.environ.get('DJANGO_DEBUG') != 'False'
+DEBUG = 'DJANGO_DEBUG' != 'False'
 
 ALLOWED_HOSTS = ['*']
 
