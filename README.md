@@ -34,6 +34,10 @@ ADDITIONAL FEATURES FOR FUTURE RELEASE
 ●	CSS
 ●	Netlify deployment
 
+### Deployment
+- Backend deployed at https://mighty-taiga-67438.herokuapp.com/
+- Frontend deployed at (TBC)
+
 ### Target Audience
 Anybody that wants to have a clear route to follow while looking for items in the supermarket.
 
