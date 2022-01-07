@@ -1,1 +1,1 @@
-web: gunicorn AisleView.wsgi --log-file -
+web: gunicorn AisleView AisleView.wsgi --log-file -
