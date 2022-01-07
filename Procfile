@@ -1,0 +1,1 @@
+web: gunicorn AisleView.wsgi --log-file -
