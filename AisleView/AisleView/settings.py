@@ -98,8 +98,12 @@ WSGI_APPLICATION = 'AisleView.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dakkevd2q52i5r',
+        'USER': 'qbnmrcaztsgazb',
+        'PASSWORD': '8a5b76369c3a73acd68344b1fd99cf78f1afbdfb7ae68bdcac2e846dfe54289d',
+        'HOST': 'ec2-34-202-57-100.compute-1.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
